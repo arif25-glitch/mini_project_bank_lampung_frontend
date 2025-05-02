@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import { api } from '../../services/api';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'; // Import useAppSelector
-import { logout, setUserData, loginSuccess } from '../../redux/features/authSlice'; // Import loginSuccess
+import { logout, loginSuccess } from '../../redux/features/authSlice'; // Import loginSuccess
 
 interface PrivateRouteProps {
   children: React.ReactNode;

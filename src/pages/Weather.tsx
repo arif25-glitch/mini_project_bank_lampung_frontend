@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect, useRef } from 'react';
@@ -197,21 +198,21 @@ const CityDropdown = ({ cities, selectedCity, onChange, onSearch, isLoading }: C
 };
 
 // Simple inline pattern SVG component for cards
-const CardPattern = () => (
-  <div className="absolute inset-0 w-full h-full overflow-hidden opacity-[0.03] pointer-events-none">
-    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
-          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
-        </pattern>
-        <pattern id="dots" width="15" height="15" patternUnits="userSpaceOnUse">
-          <circle cx="1" cy="1" r="1" fill="white"/>
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#dots)" />
-    </svg>
-  </div>
-);
+// const CardPattern = () => (
+//   <div className="absolute inset-0 w-full h-full overflow-hidden opacity-[0.03] pointer-events-none">
+//     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+//       <defs>
+//         <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+//           <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
+//         </pattern>
+//         <pattern id="dots" width="15" height="15" patternUnits="userSpaceOnUse">
+//           <circle cx="1" cy="1" r="1" fill="white"/>
+//         </pattern>
+//       </defs>
+//       <rect width="100%" height="100%" fill="url(#dots)" />
+//     </svg>
+//   </div>
+// );
 
 // Weather Skeleton Loader Component
 const WeatherSkeleton = () => (

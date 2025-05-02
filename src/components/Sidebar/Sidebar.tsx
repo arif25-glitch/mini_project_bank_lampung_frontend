@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useEffect, JSX } from 'react'; // Import useEffect
+import { useState, useEffect, JSX } from 'react'; // Import useEffect
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { api } from '../../services/api';
