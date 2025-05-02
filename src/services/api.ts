@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Define the base URL from environment variables
-const API_BASE_URL = "http://nurlistantodomain.my.id";
+const API_BASE_URL = "https://nurlistantodomain.my.id";
 
 // Create axios instance with default config
 const axiosInstance = axios.create({
