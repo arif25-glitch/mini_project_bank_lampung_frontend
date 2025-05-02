@@ -94,7 +94,7 @@ export const api = {
   loginUser: async (email: string, password: string) => {
     try {
       // First, get the CSRF cookie
-      await axiosInstance.get('/csrf-token');
+      await axiosInstance.get('/sanctum/csrf-cookie');
       
       // Attempt login
       const response = await axiosInstance.post('/api/login', { 
@@ -127,7 +127,7 @@ export const api = {
   registerUser: async (email: string, password: string, name: string) => {
     try {
       // First, get the CSRF cookie
-      await axiosInstance.get('/csrf-token');
+      await axiosInstance.get('/sanctum/csrf-cookie');
       
       // Attempt registration
       const response = await axiosInstance.post('/api/register', { 
