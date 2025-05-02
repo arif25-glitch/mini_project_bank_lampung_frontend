@@ -11,7 +11,6 @@ const axiosInstance = axios.create({
     'Content-Type': 'application/json',
     'Accept': 'application/json',
   },
-  withCredentials: true, // Important for cookies
 });
 
 // Add request interceptor to include token in authorized requests
