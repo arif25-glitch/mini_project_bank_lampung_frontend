@@ -94,13 +94,13 @@ export const api = {
   loginUser: async (email: string, password: string) => {
     try {
       // First, get the CSRF cookie
-      await axiosInstance.get('/sanctum/csrf-cookie');
+      await axiosInstance.get('/sanctum/csrf-cookie', { withCredentials: true});
       
       // Attempt login
       const response = await axiosInstance.post('/api/login', { 
         email, 
         password 
-      });
+      }, { withCredentials: true });
       
       // Store the token from the Laravel response
       if (response.data.access_token) {
@@ -127,7 +127,7 @@ export const api = {
   registerUser: async (email: string, password: string, name: string) => {
     try {
       // First, get the CSRF cookie
-      await axiosInstance.get('/sanctum/csrf-cookie');
+      await axiosInstance.get('/sanctum/csrf-cookie', { withCredentials: true});
       
       // Attempt registration
       const response = await axiosInstance.post('/api/register', { 
@@ -135,7 +135,7 @@ export const api = {
         password, 
         name,
         password_confirmation: password // Laravel usually expects this
-      });
+      }, { withCredentials: true });
       
       // Instead of calling loginUser, directly handle the authentication here
       if (response.data.access_token) {
