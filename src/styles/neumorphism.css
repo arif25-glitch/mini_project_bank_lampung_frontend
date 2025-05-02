@@ -1,0 +1,160 @@
+/* Neumorphism utility classes */
+
+.neu-flat {
+  background-color: #e0e5ec;
+  box-shadow: 
+    8px 8px 16px rgba(174, 174, 192, 0.4), 
+    -8px -8px 16px rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+}
+
+.neu-pressed {
+  background-color: #e0e5ec;
+  box-shadow: 
+    inset 2px 2px 5px rgba(174, 174, 192, 0.4), 
+    inset -2px -2px 5px rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+}
+
+.neu-flat-light {
+  background-color: #f0f4f8;
+  box-shadow: 
+    6px 6px 12px rgba(174, 174, 192, 0.2), 
+    -6px -6px 12px rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+}
+
+.neu-pressed-light {
+  background-color: #f0f4f8;
+  box-shadow: 
+    inset 2px 2px 4px rgba(174, 174, 192, 0.2), 
+    inset -2px -2px 4px rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+}
+
+.neu-dropdown {
+  background-color: #f8fafc;
+  box-shadow: 
+    6px 6px 10px rgba(174, 174, 192, 0.2), 
+    -6px -6px 10px rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+}
+
+.neu-button {
+  background-color: #f0f4f8;
+  box-shadow: 
+    4px 4px 8px rgba(174, 174, 192, 0.3), 
+    -4px -4px 8px rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.neu-button:hover {
+  box-shadow: 
+    6px 6px 10px rgba(174, 174, 192, 0.3), 
+    -6px -6px 10px rgba(255, 255, 255, 0.8);
+}
+
+.neu-button:active {
+  box-shadow: 
+    inset 2px 2px 4px rgba(174, 174, 192, 0.3), 
+    inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.neu-button-primary {
+  background: linear-gradient(135deg, #0600ad, #0500c4);
+  color: white;
+  box-shadow: 
+    4px 4px 8px rgba(6, 0, 173, 0.3), 
+    -4px -4px 8px rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.neu-button-primary:hover {
+  box-shadow: 
+    6px 6px 10px rgba(6, 0, 173, 0.3), 
+    -6px -6px 10px rgba(255, 255, 255, 0.1);
+}
+
+.neu-button-primary:active {
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.neu-input {
+  background-color: #f0f4f8;
+  box-shadow: 
+    inset 2px 2px 5px rgba(174, 174, 192, 0.2), 
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+}
+
+.neu-card {
+  background-color: #f0f4f8;
+  box-shadow: 
+    8px 8px 16px rgba(174, 174, 192, 0.3), 
+    -8px -8px 16px rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+}
+
+.neu-accent-top {
+  position: relative;
+}
+
+.neu-accent-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(to right, var(--accent-color-from, #0600ad), var(--accent-color-to, #0500c4));
+}
+
+.neu-accent-left {
+  position: relative;
+}
+
+.neu-accent-left::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 0;
+  bottom: 10%;
+  width: 4px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, var(--accent-color-from, #0600ad), var(--accent-color-to, #0500c4));
+}
+
+/* Weather specific styles */
+.weather-card {
+  background-color: #f8fafc;
+  border-radius: 16px;
+  box-shadow: 
+    8px 8px 16px rgba(174, 174, 192, 0.2), 
+    -8px -8px 16px rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(to right, var(--gradient-from), var(--gradient-to));
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}

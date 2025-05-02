@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply m-0 font-sans antialiased bg-[#f0f4f8]; /* Light grey background for neumorphism */
+  }
+
+  /* Custom Scrollbar - WebKit browsers (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(240, 240, 250, 0.1);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #0600adcc 0%, #0500c4cc 100%); /* Slightly transparent */
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    transition: background 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #0500c4 0%, #0400da 100%);
+    background-clip: content-box;
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #0600adcc rgba(240, 240, 250, 0.1);
+  }
+
+  /* Specific scrollbar for dropdown */
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(6, 0, 173, 0.4);
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(6, 0, 173, 0.6);
+  }
+  .custom-scrollbar {
+    scrollbar-color: rgba(6, 0, 173, 0.4) rgba(0, 0, 0, 0.05);
+  }
+
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+}
+
+@layer components {
+  .bg-pattern {
+    /* Example subtle pattern */
+    background-image: radial-gradient(circle, rgba(255,255,255,0.5) 0.5px, transparent 0.5px);
+    background-size: 10px 10px;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/20 border border-white/30;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md bg-white/80 border border-white/10;
+    box-shadow: 
+      8px 8px 16px rgba(174, 174, 192, 0.2), 
+      -8px -8px 16px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Weather animations */
+@keyframes rain {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 20px;
+  }
+}
+
+@keyframes move-clouds {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(10%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes sun-rays {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+
+@keyframes rain-drop {
+  0% {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes lightning-flash {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 30% {
+    opacity: 1;
+  }
+  20%, 40%, 50% {
+    opacity: 0;
+  }
+}
