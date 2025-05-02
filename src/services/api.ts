@@ -7,12 +7,11 @@ const API_BASE_URL = "https://nurlistantodomain.my.id";
 // Create axios instance with default config
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
-  withCredentials: true, // Important for Sanctum cookies
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
-    'X-Requested-With': 'XMLHttpRequest', // Often required by Laravel
   },
+  withCredentials: true, // Important for cookies
 });
 
 // Add request interceptor to include token in authorized requests
@@ -95,7 +94,7 @@ export const api = {
   loginUser: async (email: string, password: string) => {
     try {
       // First, get the CSRF cookie
-      await axiosInstance.get('/sanctum/csrf-cookie');
+      await axiosInstance.get('/csrf-cookie');
       
       // Attempt login
       const response = await axiosInstance.post('/api/login', { 
@@ -128,7 +127,7 @@ export const api = {
   registerUser: async (email: string, password: string, name: string) => {
     try {
       // First, get the CSRF cookie
-      await axiosInstance.get('/sanctum/csrf-cookie');
+      await axiosInstance.get('/csrf-cookie');
       
       // Attempt registration
       const response = await axiosInstance.post('/api/register', { 
